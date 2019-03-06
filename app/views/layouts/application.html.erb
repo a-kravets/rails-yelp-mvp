@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsYelpMvp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class="navbar-wagon">
+    <!-- Logo -->
+    <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "", height: 50 %>
+    <% end %>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <!-- Links -->
+      <%= link_to "Restaurants", "/restaurants", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Add restaurant", "/restaurants/new", class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <!-- Avatar with dropdown menu -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+          <%= image_tag "https://dwj199mwkel52.cloudfront.net/assets/lewagon-logo-square-fe76916e1b923ade71e253ae6dc031d936e5e8eebac4e26b0fbac650ea6ee360.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "#" do %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dropdown list appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Some mobile link</a></li>
+          <li><a href="#">Other one</a></li>
+          <li><a href="#">Other one</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-part">
+
+
+    <%= yield %>
+
+
+  </div>
+
+
+  <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      This footer is made with <i class="fas fa-heart"></i> at Le Wagon Milan
+    </div>
+  </div>
+
+  </body>
+</html>
